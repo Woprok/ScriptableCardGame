@@ -1,0 +1,52 @@
+﻿<Window x:Class="Client.Launcher.Views.LoginWindowView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:Client.Launcher.ViewModels"
+        mc:Ignorable="d" 
+        SizeToContent="WidthAndHeight"
+        MinWidth="300" MinHeight="300">
+    <Window.DataContext>
+        <viewModels:LoginWindowViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" x:Name="ServerSelectionGrid" Visibility="{Binding ServerNotSelected, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" x:Name="IpAddressCaption" Margin="5"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="IpAddressValue" Text="{Binding IpAddressValue, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" x:Name="PortCaption" Margin="5"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="PortValue" Text="{Binding PortValue, Mode=TwoWay, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="ConfirmServer" Click="InvokeConfirmServer" IsDefault="True" IsEnabled="{Binding CanConfirmServer}" Margin="5"/>
+        </Grid>
+        <Grid Grid.Row="2" x:Name="LoginInputGrid" Visibility="{Binding LoginAvailable, Converter={StaticResource BooleanToVisibilityConverter}}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Row="0" Grid.Column="0" x:Name="NameCaption" Margin="5"/>
+            <TextBox Grid.Row="0" Grid.Column="1" x:Name="NameValue" Text="{Binding NameValue, Mode=TwoWay,ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+            <TextBlock Grid.Row="1" Grid.Column="0" x:Name="PasswordCaption" Margin="5"/>
+            <TextBox Grid.Row="1" Grid.Column="1" x:Name="PasswordValue" IsEnabled="False" Text="{Binding PasswordValue, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+            <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" x:Name="TryLogin" Click="InvokeTryLogin" IsDefault="True" IsEnabled="{Binding CanTryLogin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+        </Grid>
+    </Grid>
+</Window>

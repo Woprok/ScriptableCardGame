@@ -1,0 +1,17 @@
+Dalej by malo byt mozne rovnako zlepsit ClientMessageModel a ServerMessageModel.
+
+Ak bude potrebne tak by malo byt mozne vytvorit viac klientov na viac nezavislych pripojeni pre vacsiu priepustnost.
+
+Da sa nejako zabalit Window class aby som nemusel inicializovat vzdy vsetko ?
+
+Zrefaktorovat EntityEditorDialog aby bol lepsi a krajsi a stylovejsi a coolovejsi a much more exciting
+
+Zrefaktorovat Netwoking a rozdelit ju do mensich kniznic
+
+Zrefaktorovat GameNetworking pretoze je tam velky overhead pri posielanim updatov a zmien
+
+Zaviest jednotheho WindowManagera
+
+
+Aktualne nejde hybat kartami ktore nie su cele vykreslene v ploche, pravdepodobne nieco s tim ako funguje scrollviewer
+prehlasujem to za feature

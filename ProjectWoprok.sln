@@ -1,0 +1,85 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2035
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{08F4C53A-9C7C-4B0D-9C5A-20F9DFFB32FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{DDDA767E-9B2E-40D2-99DC-F56E3E472F1C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{96915716-0B92-4224-B046-54A20CF80370}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Networking", "Shared.Networking\Shared.Networking.csproj", "{60D102BB-21ED-4291-9671-553F72290477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client.Launcher", "Client.Launcher\Client.Launcher.csproj", "{1EA84FDC-DE86-4B29-95A3-561793E529CE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server.Launcher", "Server.Launcher\Server.Launcher.csproj", "{41535DEF-CB7F-4C9B-8AE8-34020DB9A062}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A3BF9403-B8E8-4EDE-A6A6-1F76A3728DBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Common", "Shared.Common\Shared.Common.csproj", "{9FF9AD05-CB77-448C-934D-2A6A1269AC55}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shared.Game", "Shared.Game\Shared.Game.csproj", "{6CB7BA6A-17F4-48DB-A787-2029804131C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoveTest", "MoveTest\MoveTest.csproj", "{2646F330-75B5-4977-A6BC-D9329EC6A25C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{848BB48B-1067-477C-93F2-19DF18E69597}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\CodeStandard.txt = Documentation\CodeStandard.txt
+		Documentation\NetworkingOverview.txt = Documentation\NetworkingOverview.txt
+		Documentation\Quotes.txt = Documentation\Quotes.txt
+		Documentation\RefactoringIdeas.txt = Documentation\RefactoringIdeas.txt
+		Documentation\Specification.txt = Documentation\Specification.txt
+		Documentation\SpecificationClient.txt = Documentation\SpecificationClient.txt
+		Documentation\SpecificationData.txt = Documentation\SpecificationData.txt
+		Documentation\SpecificationServer.txt = Documentation\SpecificationServer.txt
+		Documentation\SpecificationShort.txt = Documentation\SpecificationShort.txt
+		Documentation\TaskNotes.txt = Documentation\TaskNotes.txt
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60D102BB-21ED-4291-9671-553F72290477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60D102BB-21ED-4291-9671-553F72290477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60D102BB-21ED-4291-9671-553F72290477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60D102BB-21ED-4291-9671-553F72290477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EA84FDC-DE86-4B29-95A3-561793E529CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EA84FDC-DE86-4B29-95A3-561793E529CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EA84FDC-DE86-4B29-95A3-561793E529CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EA84FDC-DE86-4B29-95A3-561793E529CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41535DEF-CB7F-4C9B-8AE8-34020DB9A062}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41535DEF-CB7F-4C9B-8AE8-34020DB9A062}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41535DEF-CB7F-4C9B-8AE8-34020DB9A062}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41535DEF-CB7F-4C9B-8AE8-34020DB9A062}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FF9AD05-CB77-448C-934D-2A6A1269AC55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF9AD05-CB77-448C-934D-2A6A1269AC55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF9AD05-CB77-448C-934D-2A6A1269AC55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF9AD05-CB77-448C-934D-2A6A1269AC55}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CB7BA6A-17F4-48DB-A787-2029804131C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CB7BA6A-17F4-48DB-A787-2029804131C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CB7BA6A-17F4-48DB-A787-2029804131C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CB7BA6A-17F4-48DB-A787-2029804131C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2646F330-75B5-4977-A6BC-D9329EC6A25C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2646F330-75B5-4977-A6BC-D9329EC6A25C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2646F330-75B5-4977-A6BC-D9329EC6A25C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2646F330-75B5-4977-A6BC-D9329EC6A25C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{60D102BB-21ED-4291-9671-553F72290477} = {08F4C53A-9C7C-4B0D-9C5A-20F9DFFB32FD}
+		{1EA84FDC-DE86-4B29-95A3-561793E529CE} = {DDDA767E-9B2E-40D2-99DC-F56E3E472F1C}
+		{41535DEF-CB7F-4C9B-8AE8-34020DB9A062} = {96915716-0B92-4224-B046-54A20CF80370}
+		{9FF9AD05-CB77-448C-934D-2A6A1269AC55} = {08F4C53A-9C7C-4B0D-9C5A-20F9DFFB32FD}
+		{6CB7BA6A-17F4-48DB-A787-2029804131C2} = {08F4C53A-9C7C-4B0D-9C5A-20F9DFFB32FD}
+		{2646F330-75B5-4977-A6BC-D9329EC6A25C} = {A3BF9403-B8E8-4EDE-A6A6-1F76A3728DBB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {27334F82-21E5-49AD-AB76-31E4F2511023}
+	EndGlobalSection
+EndGlobal

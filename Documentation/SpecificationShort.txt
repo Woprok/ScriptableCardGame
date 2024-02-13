@@ -1,0 +1,42 @@
+ToDo : Zistiť ako má vyzerať špecifikácie na zápočtový program na C# a aktualizovať aktuálnu podobu tohto dokumentu aby odpovedal vyžadovanej podobe.
+Autor: Miroslav Valach
+Myšlienka zápočtového programu: Turn-Based Multiplayer Card Game inšpirovaná Magic: The Gathering zo zvíšenou interaktivitou medzi hráčmi. 
+Cieľ: Vytvoriť projekt, ktorí bude rozšíritelny a pripravený na budúce rozširovanie smerom k dokonalému produktu. t.j. malo by ísť o hratelnú hru pre dva a viac hráčov cez internet.
+Dokonalý produkt: Bude umožnovať tvorbu kariet počas hry, vrátane efektov kariet. 
+
+Gameloop: 
+1. Všetci hrácči poťiahnu karty.
+2. Hrač na ťahu zahrá kartu.
+3. Ostatní hrači môžu reagovať.
+4. Ukončenie ťahu hráča, pokračuje další hrač.
+5. Koniec kola.
+
+Hra sa hrá na hracej ploche, kde každý hrač ma pred sebou svoju hraciu plochu obdĺžnikového tvaru.
+
+Základný požiadavok na funkčnosť:
+Komunikacia klienta a serveru cez internet.
+Umožniť prihlásiť sa z klienta k serveru.
+Klient umožnuje uživatelovi písať ostatným klientom pripojením na server a pripojiť sa do hry.
+Server obsluhuje jednu game session a kontroluje dodržiavanie pravidiel zo strany klientov.
+Klient by mal umožniť plynulé hranie hry.
+Uživatelské učty su spravované zo serveru pomocou písania textových súborov.
+Server sa nastavuje pomocou textového súboru.
+Výmedzenie základnej Plugin API aby bolo možné rozširovať aplikáciu takmer všetkými smermi.
+Vytváranie kariet, efektov kariet, pravidiel atď. ako pluginov do aplikácie.
+
+Rozšírenia:
+Server používa databazu miesto súborov a základ zabezpečenia.
+Pokročila správa uživatelských učtov z klienta.
+Plne funkčné UI, ktoré nespôsobuje vysoký level frustrácie z nekonzistentnosti.
+Umožniť takmer ľubovolnému počtu hráčov hrať jednu hru.
+Podpora plne nastavitelných pravidiel hry.
+Umožniť tvorbu kariet z predpripravených efektov. 
+Umožniť tvorbu kariet vrátane uživatelmi spravených efektov počas hry. 
+
+Technologie: 
+Rôzne súčasti .NET Frameworku (TCP/IP, C#Scripting, Mef, WPF)
+Preto by aplikácia mala byť spustitelná na PC s WINDOWSOM.
+
+Čo neočakavať:
+Pekný visual, grafické efekty, zvuk a bug-free započtový program.
+Taktiež by som neočakaval, že to niekedy bude splnovať všetky predstavy, ktoré by mohli plynúť z tohto textu.

@@ -1,0 +1,47 @@
+Client <---> Serializacia <---> Server <---> Serializacia <---> Client
+
+-> Server is authoritative
+-> Client send action to server
+-> Server resend action from client to all other clients
+-> Server Validate Data
+-> Server warn other clients if one of the client is sending incorrect data
+-> Server will then validate data from that client and send only correct one
+
+Both:
+Listen <- GetData from other
+	-> should send ack
+Send <- SendData to other
+	-> should get ack
+Request <- RequestData from other
+	-> Requires immediate answer from other
+
+Stories:
+Create Project for Client & Sserver & NetworkingLibrary
+Create ReceiverClient
+	-> can receive message
+Create SendingServer
+	-> can send message
+Create Client
+	-> composed of ReceiverClient and SendingServer
+	-> can receive and send message to authoritative server
+Create AuthoritativeServer
+	-> composed of ReceiverClient, SendingServer and AuthoritativeServer components
+	-> can receive and send message to any registred Client
+
+Based on mininum reasonable internet speed in time of writing this peace of paper xxxkB/s
+We should be fine with overhead of TCP/IP
+We should have no problem with sending class Message(less than 1kB) (8/16bit additional overhead for receiver due to pointers)
+Class Message can contain additional data
+We will have LargeMessage(over 1kB) for stuff like
+	-> new card just created
+	-> validating/fixing incorrect client states
+	-> sending other oversized messages like whole plugin that should be compiled (huh? I told ya, we are gona compile .cs at runtime)
+
+Class Message (under 1kB)
+-Sender
+-Receiver
+-ValidatedBy //overriding property, default should be client
+Class LargeMessage : Message (over 1kB)
+-MessageCount
+-MessageId
+

@@ -1,0 +1,43 @@
+DataStructes:
+UserCredentials:
+1. string AccountName
+2. string AccountPassword
+3. unique AccountIdentifier
+4. List of GameAccounts, unique by Game
+
+GameAccount<Game>:
+1. Id
+2. Name
+3. Description
+4. Type of Game
+5. Game Specific Information
+
+CardVocabulary
+1. Id
+2. Name
+3. Description
+4. List of Cards
+	5. Add Card
+	6. Remove Card
+	7. Replace Card
+
+Card:
+0. Id
+1. Name
+2. Art
+3. Flavor
+4. Prerequisite
+5. Effect
+6. Type
+7. ???
+
+Deck:
+1. Name
+2. Size
+3. Stored Cards
+	a. Remove Card
+	b. Add Card
+	c. Replace Card
+
+RulesPackage
+Rules

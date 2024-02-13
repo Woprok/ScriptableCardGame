@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{60D102BB-21ED-4291-9671-553F72290477}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shared.Networking</RootNamespace>
+    <AssemblyName>Shared.Networking</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Enums\ModelState.cs" />
+    <Compile Include="Common\Interfaces\IConnector.cs" />
+    <Compile Include="Common\Interfaces\IGenericDataModel.cs" />
+    <Compile Include="Common\Interfaces\IStartStopModel.cs" />
+    <Compile Include="Common\Managers\ClientEntityManager.cs" />
+    <Compile Include="Common\Managers\ServerEntityManager.cs" />
+    <Compile Include="Common\Models\GenericDataModel.cs" />
+    <Compile Include="Common\Models\StartStopModel.cs" />
+    <Compile Include="Common\Models\ThreadModel.cs" />
+    <Compile Include="Common\Models\DataExchangerModel.cs" />
+    <Compile Include="Common\Interfaces\IDataExchangerModel.cs" />
+    <Compile Include="Common\Interfaces\ISendReceiveModel.cs" />
+    <Compile Include="Common\Protocol\EntityCollectionRequestMessage.cs" />
+    <Compile Include="Common\Protocol\EntityCollectionResponseMessage.cs" />
+    <Compile Include="Common\Protocol\EntityRequestMessage.cs" />
+    <Compile Include="Common\Protocol\EntityResponseMessage.cs" />
+    <Compile Include="Common\Protocol\EntitySimpleRequestMessage.cs" />
+    <Compile Include="Common\Protocol\EntitySimpleResponseMessage.cs" />
+    <Compile Include="Common\Enums\Request.cs" />
+    <Compile Include="Common\Managers\GenericEntityMessageManager.cs" />
+    <Compile Include="Game\Entities\ClientGameInstance.cs" />
+    <Compile Include="Game\Entities\GameInstanceEntity.cs" />
+    <Compile Include="Game\Entities\GameStateEntity.cs" />
+    <Compile Include="Game\Entities\ServerGameInstance.cs" />
+    <Compile Include="Game\Enums\GameRequest.cs" />
+    <Compile Include="Game\Enums\GameState.cs" />
+    <Compile Include="Game\Managers\GameClientManager.cs" />
+    <Compile Include="Game\Managers\GameManager.cs" />
+    <Compile Include="Game\Managers\GameServerManager.cs" />
+    <Compile Include="Game\Messages\Updates\CloseGameUpdate.cs" />
+    <Compile Include="Game\Messages\Requests\CreateGameRequest.cs" />
+    <Compile Include="Game\Messages\Responses\CreateGameResponse.cs" />
+    <Compile Include="Game\Messages\Updates\CreateGameUpdate.cs" />
+    <Compile Include="Game\Messages\Base\GameMessage.cs" />
+    <Compile Include="Game\Messages\Base\GameRequestMessage.cs" />
+    <Compile Include="Game\Messages\Base\GameResponseMessage.cs" />
+    <Compile Include="Game\Messages\Base\GameUpdateMessage.cs" />
+    <Compile Include="Game\Messages\Updates\FullGameUpdate.cs" />
+    <Compile Include="Game\Messages\Requests\FullGameUpdateRequest.cs" />
+    <Compile Include="Game\Messages\Responses\JoinGameResponse.cs" />
+    <Compile Include="Game\Messages\Responses\FullGameUpdateResponse.cs" />
+    <Compile Include="Game\Messages\Updates\JoinGameUpdate.cs" />
+    <Compile Include="Game\Messages\Updates\LeaveGameUpdate.cs" />
+    <Compile Include="Game\Messages\Requests\ProcessTurnRequest.cs" />
+    <Compile Include="Game\Messages\Responses\ProcessTurnResponse.cs" />
+    <Compile Include="Game\Messages\Updates\ProcessTurnUpdate.cs" />
+    <Compile Include="Game\Messages\Updates\StartGameUpdate.cs" />
+    <Compile Include="Protocol\Enums\LobbyState.cs" />
+    <Compile Include="Protocol\Managers\AccountClientManager.cs" />
+    <Compile Include="Protocol\Managers\AccountServerManager.cs" />
+    <Compile Include="Protocol\Managers\LobbyClientManager.cs" />
+    <Compile Include="Protocol\Managers\LobbyServerManager.cs" />
+    <Compile Include="Protocol\Models\ClientMessageModel.cs" />
+    <Compile Include="Protocol\Models\FakeDatabaseModel.cs" />
+    <Compile Include="Protocol\Models\ServerMessageModel.cs" />
+    <Compile Include="Protocol\Entities\AccountEntity.cs" />
+    <Compile Include="Common\Exceptions\EventNotSubscribedException.cs" />
+    <Compile Include="Common\Exceptions\InvalidCallException.cs" />
+    <Compile Include="Common\Exceptions\UnknownEnumValueException.cs" />
+    <Compile Include="Common\Models\ClientModel.cs" />
+    <Compile Include="Common\Models\DataModel.cs" />
+    <Compile Include="Common\Models\SendReceiveModel.cs" />
+    <Compile Include="Common\Interfaces\IListenerModel.cs" />
+    <Compile Include="Common\Interfaces\IClientModel.cs" />
+    <Compile Include="Common\Interfaces\IDataModel.cs" />
+    <Compile Include="Common\Interfaces\IReceiver.cs" />
+    <Compile Include="Common\Interfaces\ISender.cs" />
+    <Compile Include="Common\Models\ListenerModel.cs" />
+    <Compile Include="Common\Models\ReceiverModel.cs" />
+    <Compile Include="Common\Models\SenderModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protocol\Entities\LobbyEntity.cs" />
+    <Compile Include="Common\Enums\Response.cs" />
+    <Compile Include="Common\Entities\UniqueEntity.cs" />
+    <Compile Include="Protocol\Extensions\AccountExtensions.cs" />
+    <Compile Include="Common\Protocol\BaseMessage.cs" />
+    <Compile Include="Common\Protocol\CallbackMessage.cs" />
+    <Compile Include="Common\Protocol\CoreMessage.cs" />
+    <Compile Include="Common\Protocol\ErrorMessage.cs" />
+    <Compile Include="Common\Protocol\RequestMessage.cs" />
+    <Compile Include="Common\Protocol\ResponseMessage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Protocol\Messages\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared.Common\Shared.Common.csproj">
+      <Project>{9FF9AD05-CB77-448C-934D-2A6A1269AC55}</Project>
+      <Name>Shared.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Shared.Game\Shared.Game.csproj">
+      <Project>{6CB7BA6A-17F4-48DB-A787-2029804131C2}</Project>
+      <Name>Shared.Game</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

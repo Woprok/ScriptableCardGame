@@ -1,0 +1,48 @@
+﻿<UserControl x:Class="Shared.Game.Views.CardView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Shared.Game.Views"
+             xmlns:viewModels="clr-namespace:Shared.Game.ViewModels"
+             xmlns:convertors="clr-namespace:Shared.Game.Controls.Convertors"
+             mc:Ignorable="d">
+    <UserControl.DataContext>
+        <viewModels:CardViewModel/>
+    </UserControl.DataContext>
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <convertors:StringToVisibilityConvertor x:Key="StringToVisibilityConvertor"/>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="{Binding BeautyLevel, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="{Binding CardName, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+        <TextBlock Grid.Row="1" Background="Pink"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" x:Name="Power" Text="{Binding CardPower, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                       Background="LightSalmon" 
+                       HorizontalAlignment="Left"
+                       Foreground="White" FontWeight="Bold" FontSize="24"
+                       Visibility="{Binding CardPower, Converter={StaticResource StringToVisibilityConvertor}}"/>
+
+            <TextBlock Grid.Column="2" x:Name="Health" Text="{Binding CardHealth, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" 
+                       Background="Red" 
+                       HorizontalAlignment="Right" 
+                       Foreground="White" FontWeight="Bold" FontSize="24"
+                       Visibility="{Binding CardHealth, Converter={StaticResource StringToVisibilityConvertor}}"/>
+        </Grid>
+        <TextBlock Grid.Row="3" x:Name="Class" Text="{Binding CardClass, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center"/>
+    </Grid>
+</UserControl>

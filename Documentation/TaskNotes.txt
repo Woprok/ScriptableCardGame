@@ -1,0 +1,19 @@
+new Task(Action/Action<T>())
+task.Start() //zaradi do ThreadPool
+
+Task.Factory.StartNew(delegate, configurace) //komplexna tvorba s automatickym volanim Start()
+	TaskCreationOptions
+		AttachedToParent
+		DeniedChildAttach
+Task.Run(delegate)
+Task.Wait()
+TaskScheduler.Default/.Current -> Task.Run berie Default, Task.Factory.StartNew berie Current
+Task.Status != Thread.State (Running,Waiting) v ktorom realne bezi != OS.Thread (Running,Ready-To-Run)
+	WaitingToRun
+	Running
+Task
+Task.Result
+Task.ContinueWith(delegate)
+
+
+

@@ -1,0 +1,111 @@
+Author: Miroslav Valach
+	
+Idea: Playing a card game similiar to game of pure fantasy, shown in other medias, where rules just create available playground.
+Theme & Topic: Multiplayer Collectible Card Game with Dynamic Card Creator
+Optional: Easily Extendable, Can effectivly act as Card Game Framework
+
+Expetcted Technologies to be used:
+	C# & .NET Framework 4.7+
+	TCP/IP Sockets for networking
+	C#Scripting for Dynamic Card Creator
+	MEF & MAF for optional extensibility, plugins
+	(Wondering if I can somehow use few more?)
+
+Application Parts:
+	Client
+		-get user input
+		-calculate new state
+		-show current state 
+		-verifie state by server
+	Server
+		-gets informations from clients and send them to other
+		-process information
+		-send information to clients
+	Additional Tools for easier usage & extensibility
+		-API share package
+		-Card create & manage & test package
+
+Specification Client:
+1. Login
+	a. Get UserCredentials
+	b. Verify UserCredentials
+	c. Store UserCredentials
+	d. Login with UserCredentials
+		1. Create BrowserSession with Server
+	-> e. Change UserCredentials(Password)
+3.Communication Handling
+	a. Listen
+	b. AskFor
+2. Browse Server Options
+	b. Manage GameAccount
+		1. Select GameAccount
+			a. View
+			b. Edit
+			c. Delete
+			d. Add
+	c. Game Session
+		1a. Create (Game) & Join
+		1b. Join
+			ab. Create GameSession with Server && other Players can join it
+
+		2. Manage
+			a. Ready to Play the Game
+			b. Modify Game Session
+		3. Leave, if playerCount == 0 Close Game Session
+E&F. Exit & Finalize
+	1. Store unsaved data
+	2. Delete temporary
+	3. Close
+
+Specification Server:
+1. Open server
+2. Communication Handling
+	2. Listen
+	2. Listen & Answer
+	2. Listen & Send(Message)
+	2. AskFor
+	2. Send(Message)
+	2. Store(ObtainedData)
+3. Host Game Session
+	a. Start Game
+	b. Simulate Game
+	c. Close Game
+E&F. Exit & Finalize
+
+Specification Card&Deck Vocabulary
+1. Manage Private Local
+2. Upload Private, become Public
+3. Modify, Remove Server Public (requiers ownerShip or serverOwnerShip)
+
+Specification Card Manager:
+1. View Card
+	a. Load Card
+	b. Modify Card
+	 1. Test Card
+	c. Validate Card for rules package
+	d. Save Card as
+2. Create Card
+	a. Create Blank Card
+	b. Set Card properties
+	c. Save Card as
+3.Delete Card
+
+Specification Deck Manager:
+1. View Deck
+	a. Load Deck
+	b. Modify Deck
+		1. Add
+		2. Remove
+		3. Replace
+	c. Save Deck as
+2. Create Deck
+	a. Create Blank Deck
+	b. Set Deck cards
+	c. Save Deck as
+3. Delecte Deck
+-----------------------------------------------------------------------------------
+Specification API:
+IGame
+ICard
+IRule
+ISession
